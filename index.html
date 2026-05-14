@@ -280,17 +280,19 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
 
 /* ── TABLET 769–1024 ── */
 @media(min-width:769px) and (max-width:1024px){
-  :root{--pad:32px}
-  h1.hero-title{font-size:clamp(44px,7vw,72px)}
-  h1.hero-title .ind{padding-left:60px}
-  .pgrid{grid-template-columns:repeat(12,1fr)}
-  .svc{grid-template-columns:36px 1fr 1fr;gap:24px}
+  :root{--pad:40px}
+  h1.hero-title{font-size:clamp(44px,7vw,84px)}
+  h1.hero-title .ind{padding-left:80px}
+  .pgrid{grid-template-columns:repeat(6,1fr)}
+  .p.c8{grid-column:span 4}.p.c4{grid-column:span 2}.p.c6{grid-column:span 3}
+  .p.c5{grid-column:span 3}.p.c7{grid-column:span 3}.p.c3{grid-column:span 2}
+  .svc{grid-template-columns:36px 1fr 1fr;gap:32px}
   .svc-tags{display:none}
-  .about-grid{gap:48px}
-  .about-h{font-size:34px}
-  .contact-grid{gap:48px}
-  .contact-h{font-size:38px}
-  .stats-bar{padding:40px var(--pad)}
+  .about-grid{grid-template-columns:1fr 1.2fr;gap:48px}
+  .about-h{font-size:36px}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:48px}
+  .contact-h{font-size:40px}
+  .stats-bar{grid-template-columns:repeat(4,1fr);padding:40px var(--pad)}
   .stat{padding:0 20px}
   .stat-n{font-size:44px}
 }
@@ -533,7 +535,7 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
 
 <!-- STATS -->
 <div class="stats-bar fu">
-  <div class="stat"><span class="stat-n">10+</span><span class="stat-l">Projects Delivered</span></div>
+  <div class="stat"><span class="stat-n">50+</span><span class="stat-l">Projects Delivered</span></div>
   <div class="stat"><span class="stat-n">5</span><span class="stat-l">Service Categories</span></div>
   <div class="stat"><span class="stat-n">3+</span><span class="stat-l">Years Shooting</span></div>
   <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Frames With Intention</span></div>
@@ -560,10 +562,9 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
       </div>
       <div class="about-facts">
         <div class="fact"><span class="fk">Based in</span><span class="fv">Lagos, Nigeria</span></div>
-        <div class="fact"><span class="fk">Camera</span><span class="fv">Canon EOS 6D · iPhone 11</span></div>
-        <div class="fact"><span class="fk">Post Production</span><span class="fv">DaVinci Resolve Studio</span></div>
+        <div class="fact"><span class="fk">Post Production</span><span class="fv">DaVinci Resolve · Premiere Pro · After Effects</span></div>
         <div class="fact"><span class="fk">Available for</span><span class="fv">Local & Remote Projects Worldwide</span></div>
-        <div class="fact"><span class="fk">Instagram</span><span class="fv" style="color:var(--accent)">@madebyeleeyah</span></div>
+        <div class="fact"><span class="fk">Instagram</span><span class="fv" style="color:var(--accent)">@leeyah_jabita</span></div>
       </div>
     </div>
   </div>
@@ -577,16 +578,16 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
       <h3 class="contact-h">Let's make something <em>unforgettable.</em></h3>
       <p class="contact-sub">Ready to work together? Reach out directly or fill the form — I respond within 24 hours.</p>
       <div class="clinks">
-        <a href="mailto:hello@madebyeleeyah.com" class="clink">
-          <div class="clink-l"><span class="clink-label">Email</span><span class="clink-val">hello@madebyeleeyah.com</span></div>
+        <a href="mailto:aaliyahadebimpe@gmail.com" class="clink">
+          <div class="clink-l"><span class="clink-label">Email</span><span class="clink-val">aaliyahadebimpe@gmail.com</span></div>
           <span class="carr">↗</span>
         </a>
-        <a href="https://instagram.com/madebyeleeyah" target="_blank" class="clink">
-          <div class="clink-l"><span class="clink-label">Instagram</span><span class="clink-val">@madebyeleeyah</span></div>
+        <a href="https://instagram.com/leeyah_jabita" target="_blank" class="clink">
+          <div class="clink-l"><span class="clink-label">Instagram</span><span class="clink-val">@leeyah_jabita</span></div>
           <span class="carr">↗</span>
         </a>
-        <a href="#" class="clink">
-          <div class="clink-l"><span class="clink-label">WhatsApp</span><span class="clink-val">+234 — add your number</span></div>
+        <a href="https://wa.me/2348077247513" target="_blank" class="clink">
+          <div class="clink-l"><span class="clink-label">WhatsApp</span><span class="clink-val">+234 807 724 7513</span></div>
           <span class="carr">↗</span>
         </a>
       </div>
@@ -609,8 +610,8 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="fg"><label class="fl">Tell me about the project</label><textarea class="ft" placeholder="Budget, timeline, any details that help..."></textarea></div>
-        <button class="fsub">Send Message →</button>
+        <div class="fg"><label class="fl">Tell me about the project</label><textarea id="fmsg" class="ft" placeholder="Budget, timeline, any details that help..."></textarea></div>
+        <button class="fsub" onclick="sendWhatsApp()">Send Message →</button>
       </div>
     </div>
   </div>
@@ -621,9 +622,7 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
   <span class="flogo">Made<span>By</span>Leeyah</span>
   <span class="fcopy">© 2025 MadeByLeeyah. All rights reserved.</span>
   <div class="flinks">
-    <a href="#">Instagram</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">YouTube</a>
+    <a href="https://instagram.com/leeyah_jabita" target="_blank">Instagram</a>
   </div>
 </footer>
 
@@ -683,6 +682,20 @@ document.querySelectorAll('.p').forEach(proj=>{
     }
   });
 });
+
+// WhatsApp Form
+function sendWhatsApp(){
+  const name = document.querySelector('input[placeholder="Your name"]').value;
+  const email = document.querySelector('input[placeholder="your@email.com"]').value;
+  const service = document.querySelector('.fs').value;
+  const msg = document.getElementById('fmsg').value;
+  
+  if(!name || !msg) { alert('Please fill in your name and message.'); return; }
+  
+  const text = `Hello Leeyah, my name is ${name} (${email}). I'm interested in ${service || 'a project'}. Details: ${msg}`;
+  const url = `https://wa.me/2348077247513?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+}
 </script>
 </body>
 </html>
