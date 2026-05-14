@@ -440,18 +440,22 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
       <div class="pfoot"><span class="pfname">Brand Reel</span><span class="pftype">Short Form</span></div>
     </div>
 
-    <div class="p c3 portrait" data-cat="social" data-video="PASTE_REEL2_LINK">
+    <div class="p c3 portrait" data-cat="social" data-video="fashion_reel.mp4">
       <div class="pv">
-        <div class="pbg bg-sm2"><div class="pghost">Reel</div></div>
+        <div class="pbg">
+          <video src="fashion_reel.mp4#t=0.1" muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover;"></video>
+        </div>
         <div class="poverlay"><span class="pcat">Social Media Reels</span><span class="pname">Fashion Reel</span></div>
         <div class="pplay"></div><div class="pvid"></div>
       </div>
       <div class="pfoot"><span class="pfname">Fashion Reel</span><span class="pftype">Short Form</span></div>
     </div>
 
-    <div class="p c3 portrait" data-cat="social" data-video="PASTE_REEL3_LINK">
+    <div class="p c3 portrait" data-cat="social" data-video="brand_reel_2.mp4">
       <div class="pv">
-        <div class="pbg bg-sm3"><div class="pghost">Reel</div></div>
+        <div class="pbg">
+          <video src="brand_reel_2.mp4#t=0.1" muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover;"></video>
+        </div>
         <div class="poverlay"><span class="pcat">Social Media Reels</span><span class="pname">Brand Reel — Vol. 2</span></div>
         <div class="pplay"></div><div class="pvid"></div>
       </div>
@@ -459,9 +463,11 @@ footer{background:var(--bg);padding:28px var(--pad);border-top:1px solid var(--b
     </div>
 
     <!-- Wedding -->
-    <div class="p c3 portrait" data-cat="event" data-video="PASTE_WEDDING_LINK">
+    <div class="p c3 portrait" data-cat="event" data-video="wedding_film.mov">
       <div class="pv">
-        <div class="pbg bg-ev2"><div class="pghost">Wedding</div></div>
+        <div class="pbg">
+          <video src="wedding_film.mov#t=0.1" muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover;"></video>
+        </div>
         <div class="poverlay"><span class="pcat">Event Coverage</span><span class="pname">Wedding Film</span></div>
         <div class="pplay"></div><div class="pvid"></div>
       </div>
@@ -683,11 +689,11 @@ document.querySelectorAll('.p').forEach(proj=>{
     }else if(link.includes('drive.google')){
       const id=link.match(/\/d\/([^\/\?]+)/)?.[1];
       if(id)src=`https://drive.google.com/file/d/${id}/preview`;
-    }else if(link.endsWith('.mp4')){
+    }else if(link.endsWith('.mp4') || link.endsWith('.mov')){
       src=link;
     }
     if(src){
-      if(src.endsWith('.mp4')){
+      if(src.endsWith('.mp4') || src.endsWith('.mov')){
         proj.querySelector('.pvid').innerHTML=`<video src="${src}" controls autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>`;
       } else {
         proj.querySelector('.pvid').innerHTML=`<iframe src="${src}" allowfullscreen allow="autoplay;fullscreen"></iframe>`;
