@@ -561,10 +561,15 @@
       overflow: hidden
     }
 
+    .p.c12 .pv,
     .p.c8 .pv,
     .p.c7 .pv,
     .p.c6 .pv {
-      aspect-ratio: 16/9
+      aspect-ratio: 16/9;
+      width: 100%
+    }
+    .p.c12 .pv {
+      min-height: 360px
     }
 
     .p.c4 .pv,
@@ -1322,12 +1327,14 @@
         grid-column: span 1
       }
 
+      .p.c12 .pv,
       .p.c8 .pv,
       .p.c7 .pv,
       .p.c6 .pv,
       .p.c5 .pv,
       .p.c4 .pv {
-        aspect-ratio: 16/9
+        aspect-ratio: 16/9;
+        min-height: 200px
       }
 
       .p.c3 .pv,
@@ -1754,10 +1761,10 @@
       </div>
 
       <!-- Personal Brand -->
-      <div class="p c12" data-cat="brand" data-video="0417(6).mp4">
+      <div class="p c12" data-cat="brand" data-video="0417.mp4">
         <div class="pv">
-          <div class="pbg">
-            <video src="0417(6).mp4#t=0.1" muted loop playsinline preload="metadata"
+          <div class="pbg bg-pb">
+            <video src="0417.mp4#t=0.1" muted loop playsinline preload="metadata"
               style="width:100%; height:100%; object-fit:cover;"></video>
           </div>
           <div class="poverlay"><span class="pcat">Personal Brand</span><span class="pname">leeyah_jabita</span></div>
